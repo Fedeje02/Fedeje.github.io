@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+/* ============================
+   DESKTOP (> 1024px)
+   Mostra testo, nasconde bottone
+   ============================ */
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Nasconde l'icona sul desktop */
+.menu a::before {
+    content: none;
+}
+
+/* Nasconde il bottone MENU sul desktop */
+.menu-btn {
+    display: none;
+}
+
+/* ============================
+   TABLET (601px - 1024px)
+   Mostra solo icone emoji
+   ============================ */
+@media (max-width: 1024px) and (min-width: 601px) {
+
+    .menu a {
+        font-size: 0;          /* nasconde il testo */
+        color: transparent;
+    }
+
+    /* Mostra l'icona tramite data-icon */
+    .menu a::before {
+        content: attr(data-icon);
+        font-size: 2rem;
+        color: initial;
+    }
+}
+
+/* ============================
+   SMARTPHONE (<= 600px)
+   Nasconde il menu, mostra bottone MENU
+   ============================ */
+@media (max-width: 600px) {
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .menu-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #e0006a;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    /* Menu nascosto di default */
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        padding: 0;
+    }
+
+    /* Quando ha la classe .aperto, il menu appare */
+    .menu.aperto {
+        display: flex;
+    }
+
+    .menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu li:last-child {
+        border-bottom: none;
+    }
+
+    .menu a {
+        display: block;
+        padding: 14px 20px;
+        font-size: 1rem !important;
+        color: #333 !important;
+    }
+
+    /* Ripristina il testo sul menu aperto (sovrascrive font-size:0 del tablet) */
+    .menu a::before {
+        content: none !important;
+    }
+}

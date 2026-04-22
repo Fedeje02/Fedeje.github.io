@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso 1 - Menu Responsive</title>
+    <link rel="stylesheet" href="caso1.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- Desktop: testo | Tablet: icone | Smartphone: bottone MENU -->
+        <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+        <ul class="menu" id="menu">
+            <li><a href="#" data-icon="🏠">Home</a></li>
+            <li><a href="#" data-icon="👥">Chi siamo</a></li>
+            <li><a href="#" data-icon="🧸">Prodotti</a></li>
+            <li><a href="#" data-icon="📞">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('aperto');
+        }
+    </script>
+
+</body>
+</html>

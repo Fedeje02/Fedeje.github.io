@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.contenitore {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    max-width: 900px;
+}
+
+h2 {
+    text-align: center;
+    padding: 15px;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+/* ============================
+   DESKTOP (> 1024px)
+   Tabella normale
+   ============================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th {
+    font-weight: bold;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+tbody tr:nth-child(odd) td {
+    color: #5b8dd9;
+}
+
+/* ============================
+   TABLET (601px - 1024px)
+   Aggiunge label "Prodotto: " "Categoria: " ecc.
+   ============================ */
+@media (max-width: 1024px) and (min-width: 601px) {
+
+    th, td {
+        font-size: 0.95rem;
+    }
+
+    /* Prefisso bold prima del valore */
+    tbody td::before {
+        content: attr(data-label) ": ";
+        font-weight: bold;
+        color: #4a7abf;
+    }
+}
+
+/* ============================
+   SMARTPHONE (<= 600px)
+   Ogni riga diventa una card verticale
+   ============================ */
+@media (max-width: 600px) {
+
+    /* Nasconde l'intestazione */
+    thead {
+        display: none;
+    }
+
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Ogni riga diventa una card */
+    tbody tr {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    td {
+        border: none;
+        padding: 4px 8px;
+        font-size: 0.9rem;
+    }
+
+    /* Prefisso bold colorato */
+    td::before {
+        content: attr(data-label) ": ";
+        font-weight: bold;
+        color: #e0006a;
+    }
+}
