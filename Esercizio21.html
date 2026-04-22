@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCSchool - Attività 21</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+    }
+
+    h2 {
+      color: #1a4a7a;
+      border-bottom: 2px solid #4ab0d9;
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+
+    /* Challenge 1 */
+    .color-box {
+      width: 80px;
+      height: 80px;
+      margin: 8px;
+      display: inline-block;
+      border-radius: 8px;
+    }
+
+    /* Challenge 2 */
+    .chiave {
+      font-weight: bold;
+      color: #1a4a7a;
+    }
+    .valore {
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Challenge 3 */
+    #lista-nomi {
+      list-style: none;
+      padding: 0;
+    }
+    #lista-nomi li {
+      padding: 8px 14px;
+      margin: 4px 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    #lista-nomi li.selezionato {
+      background: yellow;
+      border-color: orange;
+      font-weight: bold;
+    }
+
+    /* Challenge 4 */
+    .btn-numero {
+      padding: 10px 18px;
+      margin: 6px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #4ab0d9;
+      color: white;
+      cursor: pointer;
+    }
+    .btn-numero:hover {
+      background: #1a4a7a;
+    }
+    #risultato-numero {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1a4a7a;
+      margin-top: 10px;
+      display: block;
+    }
+
+    /* Challenge 5 */
+    .successo {
+      background: #d4edda;
+      color: #155724;
+      padding: 12px 18px;
+      border-radius: 8px;
+      border: 1px solid #c3e6cb;
+      font-size: 18px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .sezione {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="color:#1a4a7a;">BCSchool – Attività 21: Cicli e DOM</h1>
+
+  <!-- Challenge 1 -->
+  <div class="sezione">
+    <h2>Challenge 1 – Ciclo for con array di colori</h2>
+    <div id="container-colori"></div>
+  </div>
+
+  <!-- Challenge 2 -->
+  <div class="sezione">
+    <h2>Challenge 2 – for...in su oggetto persona</h2>
+    <div id="container-persona"></div>
+  </div>
+
+  <!-- Challenge 3 -->
+  <div class="sezione">
+    <h2>Challenge 3 – Lista nomi cliccabili</h2>
+    <ul id="lista-nomi"></ul>
+  </div>
+
+  <!-- Challenge 4 -->
+  <div class="sezione">
+    <h2>Challenge 4 – Ciclo while con pulsanti</h2>
+    <div id="container-pulsanti"></div>
+    <p>Hai selezionato: <span id="risultato-numero">–</span></p>
+  </div>
+
+  <!-- Challenge 5 -->
+  <div class="sezione">
+    <h2>Challenge 5 – do...while con input utente</h2>
+    <div id="container-successo"></div>
+  </div>
+
+  <script src="Esercizio21.js"></script>
+</body>
+</html>
