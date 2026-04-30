@@ -1,0 +1,56 @@
+/* user.css */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+.user-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.banner-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.user-banner strong {
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 700;
+  font-family: var(--font-display);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.user-banner p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.count-badge {
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* User cards: no remove button → no bottom gap needed */
+.products-grid .card .card-body {
+  padding-bottom: 1.1rem;
+}

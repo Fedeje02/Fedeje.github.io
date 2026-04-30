@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BCSchool Carrello — Accesso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="loginEs30.css" />
+</head>
+<body>
+  <div class="login-wrapper">
+
+    <div class="brand">
+      <div class="brand-logo">🛒 BC<span class="accent">School</span></div>
+      <p class="brand-tagline">Carrello Prodotti · Esercizio Attività 30</p>
+    </div>
+
+    <!-- TAB BAR -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-login" onclick="switchTab('login')">Accedi</button>
+      <button class="tab-btn" id="tab-register" onclick="switchTab('register')">Registrati</button>
+    </div>
+
+    <div class="login-card">
+
+      <!-- ===== LOGIN PANEL ===== -->
+      <div class="panel active" id="panel-login">
+        <h2 class="panel-title">Bentornato</h2>
+
+        <div id="login-alert" class="alert alert-error"></div>
+
+        <div class="form-fields">
+          <div class="input-group">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" placeholder="Inserisci username" autocomplete="username" />
+          </div>
+          <div class="input-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Inserisci password" autocomplete="current-password" />
+          </div>
+        </div>
+
+        <button class="btn-submit" onclick="handleLogin()">Accedi →</button>
+
+        <!-- Demo users hint -->
+        <div class="users-hint">
+          <p>Utenti registrati</p>
+          <div class="users-list" id="users-list">
+            <!-- populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== REGISTER PANEL ===== -->
+      <div class="panel" id="panel-register">
+        <h2 class="panel-title">Crea account</h2>
+
+        <div id="register-alert" class="alert alert-error"></div>
+
+        <div class="form-fields">
+          <div class="input-group">
+            <label for="reg-username">Username</label>
+            <input type="text" id="reg-username" placeholder="Scegli uno username" autocomplete="username" />
+          </div>
+          <div class="input-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" placeholder="Scegli una password" autocomplete="new-password" />
+          </div>
+          <div class="input-group">
+            <label>Ruolo</label>
+            <div class="role-selector">
+              <label class="role-opt selected" id="role-admin-opt">
+                <input type="radio" name="role" value="admin" checked onchange="selectRole(this)" />
+                <span class="role-icon">🛠️</span>
+                <span class="role-name">Admin</span>
+              </label>
+              <label class="role-opt" id="role-user-opt">
+                <input type="radio" name="role" value="user" onchange="selectRole(this)" />
+                <span class="role-icon">👤</span>
+                <span class="role-name">User</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-submit" onclick="handleRegister()">Crea account →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="loginEs30.js"></script>
+</body>
+</html>

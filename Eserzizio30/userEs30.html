@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BCSchool Carrello — Utente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="userEs30.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header">
+    <a href="loginEs30.css" class="logo">🛒 BC<span>School</span></a>
+    <div class="header-right">
+      <span class="user-info" id="header-username">—</span>
+      <span class="role-badge user">User</span>
+      <button class="btn btn-logout" onclick="logout()">Esci</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== INFO BANNER ===== -->
+    <div class="user-banner">
+      <span class="banner-icon">👁️</span>
+      <div>
+        <strong>Carrello prodotti</strong>
+        <p>Puoi sfogliare, cercare e rimuovere prodotti dal carrello. Solo gli amministratori possono aggiungere nuovi prodotti.</p>
+      </div>
+    </div>
+
+    <!-- ===== CART VIEW ===== -->
+    <section class="cart-section">
+      <div class="cart-header">
+        <h2 class="section-title">🛍️ Prodotti nel carrello</h2>
+        <span class="count-badge" id="product-count">0 prodotti</span>
+      </div>
+
+      <!-- Search with debounce -->
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Cerca prodotto..." oninput="debouncedSearch(this.value)" />
+      </div>
+
+      <!-- Grid (no remove buttons for users) -->
+      <div class="products-grid" id="products-grid">
+        <div class="empty-state" id="empty-state">
+          <div class="icon">🛒</div>
+          <p>Il carrello è vuoto.<br/>L'admin non ha ancora aggiunto prodotti.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TOTAL BAR ===== -->
+    <div class="total-bar">
+      <p class="total-label">Totale: <span id="total-display">0.00 €</span></p>
+      <button class="btn btn-primary" onclick="confirmCart()">✅ Conferma carrello</button>
+    </div>
+
+  </main>
+
+  <!-- ===== SUMMARY OVERLAY ===== -->
+  <div class="summary-overlay" id="summary-overlay" style="display:none;" onclick="closeSummaryOutside(event)">
+    <div class="summary-box">
+      <h3>📋 Riepilogo prodotti</h3>
+      <ul class="summary-list" id="summary-list"></ul>
+      <p class="summary-total" id="summary-total"></p>
+      <div class="summary-actions">
+        <button class="btn btn-ghost" onclick="closeSummary()">Continua ad aggiungere</button>
+        <button class="btn btn-primary" onclick="closeSummary()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script src="userEs30.js"></script>
+</body>
+</html>
